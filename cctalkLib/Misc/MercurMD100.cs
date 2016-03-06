@@ -606,7 +606,7 @@ namespace dk.CctalkLib.Misc
         }
 
         /// <summary>
-        /// Op - Modes: for Sys_Game (default) - Sys_Unload = 0 & Sys_Fill = 0, not allowed both setting Sys_Game & Sys_Unload
+        /// Op - Modes: for Sys_Game (default) - Sys_Unload = 0 and Sys_Fill = 0, not allowed both setting Sys_Game and Sys_Unload
         /// </summary>
         [Flags]
         public enum ModeControlMask
@@ -941,13 +941,13 @@ namespace dk.CctalkLib.Misc
                     {
                         if (isDeviceActive)
                         {
-                            _logger.DebugException("Device is not available", ex);
+                            _logger.Debug(ex, "Device is not available");
                             isDeviceActive = false;
                         }
                     }
                     catch (Exception ex)
                     {
-                        _logger.ErrorException(string.Empty, ex);
+                        _logger.Error(ex);
                     }
                     Thread.Sleep(200);
                 }
@@ -1344,7 +1344,7 @@ namespace dk.CctalkLib.Misc
                 catch (Exception ex)
                 {
                     res.Description = ex.Message;
-                    _logger.ErrorException(ex.Message, ex);
+                    _logger.Error(ex);
                 }
                 finally
                 {
@@ -1387,7 +1387,7 @@ namespace dk.CctalkLib.Misc
                     }
                     catch (Exception ex)
                     {
-                        _logger.ErrorException("cannot cancel task", ex);
+                        _logger.Error(ex, "cannot cancel task");
                     }
                 }
             }, tokenSource, timeout, Timeout.Infinite);

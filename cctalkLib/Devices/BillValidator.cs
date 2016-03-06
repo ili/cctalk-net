@@ -418,7 +418,7 @@ namespace dk.CctalkLib.Devices
 		/// {note byre code}={note value}={note name};
 		///                 ^ splitter   ^ splitter  ^entry splitter
 		/// </summary>
-		/// <param name="coins">configuration to build the config word</param>
+		/// <param name="notes">configuration to build the config word</param>
 		/// <returns>config word itself</returns>
 		public static string ConfigWord(Dictionary<byte, BillTypeInfo> notes)
 		{
@@ -437,7 +437,7 @@ namespace dk.CctalkLib.Devices
 		///                 ^ splitter   ^ splitter  ^entry splitter
 		/// </summary>
 		/// <param name="word">config word</param>
-		/// <param name="coins">out dictionary for parsed word, null if parsing fails</param>
+		/// <param name="notes">out dictionary for parsed word, null if parsing fails</param>
 		/// <returns>true for success, otherwise - false</returns>
 		public static bool TryParseConfigWord(string word, out Dictionary<byte, BillTypeInfo> notes)
 		{

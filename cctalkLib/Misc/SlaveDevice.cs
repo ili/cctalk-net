@@ -202,7 +202,8 @@ namespace dk.CctalkLib.Misc
         /// <summary>
         /// <para>Transmitted data :  [none] </para>
         /// <para>Received data :  [ serial 1 ] [ serial 2 ] [ serial 3 ] </para>
-        /// <para>This command returns the device serial number in binary format and for most products a 3 byte code is sufficient. </para>        /// </summary>
+        /// <para>This command returns the device serial number in binary format and for most products a 3 byte code is sufficient. </para>
+        /// </summary>
         /// <returns></returns>
         [UsedImplicitly]
         protected byte[] RequestSerialNumber()
@@ -263,21 +264,7 @@ namespace dk.CctalkLib.Misc
             return res.Data != null && res.Data.Length > 0 ? res.Data[0] : (byte)0;
         }
 
-        /// <summary> </summary>
-        public struct ScalingFactor
-        {
-            /// <summary> </summary>
-            [UsedImplicitly]
-            public byte ScalingFactor_LSB;
-            /// <summary> </summary>
-            [UsedImplicitly]
-            public byte ScalingFactor_MSB;
-            /// <summary> </summary>
-            [UsedImplicitly]
-            public byte DecimalPlaces;
-        }
-
-        /// <summary>
+	    /// <summary>
         /// <para>Transmitted data :  [ country char 1 ] [ country char 2 ] </para>
         /// <para>Received data :  [ scaling factor LSB ] [ scaling factor MSB ] [ decimal places ] </para>
         /// <para>This command requests the scaling factor and decimal places for the standard country code provided. </para>
@@ -334,7 +321,9 @@ namespace dk.CctalkLib.Misc
                                   MasterDevice.DefaultTimeout,
                                   string.IsNullOrEmpty(country) ? null : Encoding.ASCII.GetBytes(country));
             return Encoding.ASCII.GetString(res.Data);
-        }        /// <summary>
+        }
+
+        /// <summary>
         /// <para>Transmitted data :  [ bill type ] </para>
         /// <para>Received data :  [ char 1 ] [ char 2 ] [ char 3 ]… </para>
         /// <para>Refer to the ‘Modify bill id’ command for more details</para>
@@ -401,7 +390,8 @@ namespace dk.CctalkLib.Misc
             var res = ExecCommand((byte)ccTalkCommand.RequestInhibitStatus);
             return res.Data;
         }
-        /// <summary>
+
+        /// <summary>
         /// <para>Transmitted data :  [ XXXXXXX | master inhibit status ] </para>
         /// <para>Received data :  ACK </para>
         /// <para>This command changes the master inhibit status in the slave device. In a coin acceptor, if the master inhibit is active then no coins can be accepted. Likewise for a bill validator. </para>

@@ -313,7 +313,7 @@ namespace dk.CctalkLib.Misc
             }
             catch (Exception ex)
             {
-                _logger.TraceException(string.Empty, ex);
+                _logger.Trace(ex);
             }
             finally
             {   
@@ -402,7 +402,7 @@ namespace dk.CctalkLib.Misc
             }
             catch (Exception ex)
             {
-                _logger.DebugException(String.Empty, ex);
+                _logger.Debug(ex);
                 result = GetDefaultMessage(buffer);
             }
             finally
