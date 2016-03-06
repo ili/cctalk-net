@@ -1,6 +1,6 @@
-API based on ccTalk generic specification [issue 4](https://code.google.com/p/cctalk-net/issues/detail?id=4).6
+﻿API based on ccTalk generic specification [issue 4](https://code.google.com/p/cctalk-net/issues/detail?id=4).6
 
-It is basic C# .Net assembly, built for 3.5 framework.
+It is basic C# .Net assembly, built for 4.0 framework.
 
 Current release supports main commands with simple checksum. It`s ready for integration with coin acceptor (tested with Microcoin SP). Other functionality are mostly "TODO".
 
